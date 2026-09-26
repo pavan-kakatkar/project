@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Maison Aurelle — Client Portal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Playfair Display & Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffdbcd",
+            "tertiary": "#3d1200",
+            "outline-variant": "#c1c8c3",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#caeada",
+            "on-surface": "#1c1c18",
+            "on-secondary-container": "#795d41",
+            "secondary": "#74593d",
+            "surface-dim": "#dddad3",
+            "error": "#ba1a1a",
+            "background": "#fdf9f2",
+            "surface-container-low": "#f7f3ec",
+            "outline": "#727974",
+            "surface": "#fdf9f2",
+            "primary-fixed-dim": "#aecebe",
+            "inverse-surface": "#31302c",
+            "surface-cream": "#F5F1EA",
+            "secondary-fixed-dim": "#e4c09d",
+            "primary-container": "#1e3a2f",
+            "ink-primary": "#1A1917",
+            "on-tertiary-fixed-variant": "#743415",
+            "on-error-container": "#93000a",
+            "border-limestone": "#E6E0D5",
+            "on-tertiary-container": "#de8862",
+            "on-background": "#1c1c18",
+            "tertiary-fixed-dim": "#ffb597",
+            "surface-tint": "#486458",
+            "on-surface-variant": "#424844",
+            "surface-container": "#f1ede6",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-container-high": "#ece8e1",
+            "on-primary-container": "#86a496",
+            "inverse-on-surface": "#f4f0e9",
+            "on-tertiary-fixed": "#360f00",
+            "on-secondary": "#ffffff",
+            "primary": "#07241a",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#e6e2db",
+            "secondary-fixed": "#ffdcbb",
+            "on-primary-fixed-variant": "#304c41",
+            "surface-variant": "#e6e2db",
+            "tertiary-container": "#5d2305",
+            "on-primary-fixed": "#032017",
+            "secondary-container": "#fed9b5",
+            "surface-bright": "#fdf9f2",
+            "forest-deep": "#182C23",
+            "canvas-light": "#FBF9F5",
+            "on-secondary-fixed": "#2a1703",
+            "on-secondary-fixed-variant": "#5b4227",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#aecebe"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.5rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.5rem",
+            "space-sm": "0.75rem",
+            "margin": "4rem",
+            "space-lg": "2.5rem",
+            "gutter": "2rem",
+            "space-xs": "0.375rem",
+            "space-xl": "4rem"
+          },
+          "fontFamily": {
+            "label-md": ["Manrope"],
+            "label-lg": ["Manrope"],
+            "display-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Manrope"],
+            "display-xl-mobile": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Manrope"],
+            "display-xl": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "body-md": ["Manrope"],
+            "body-sm": ["Manrope"],
+            "headline-lg": ["Playfair Display"]
+          },
+          "fontSize": {
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+            "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "display-xl-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+    ::selection {
+      background-color: #1e3a2f;
+      color: #fdf9f2;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md min-h-screen selection:bg-primary-container selection:text-surface">
+<!-- Main Container: 50/50 Editorial Split -->
+<main class="min-h-screen w-full flex flex-col lg:flex-row">
+<!-- Left Column: Visual Architectural Canvas -->
+<section class="w-full lg:w-1/2 min-h-[480px] lg:min-h-screen relative overflow-hidden bg-surface-container select-none">
+<!-- Full-Height Cinematic Imagery -->
+<img alt="Architectural monograph interior of Maison Aurelle villa" class="w-full h-full object-cover object-center absolute inset-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEuWUROTZAB4jtdpKsbBV5sMDFB09REM4RnTxEuvLB2EbDfsjptoyEMJaTK_tVBP13mP5DlhMwSGyevdUpBgpZfNnCbypvB3rexCL-OFV0iXQR3l6QxqcW0jkGT8mBm-0ibVbmeFENN3dECjgzcyb9Y7r7GN75XkJVUACUMvKBPbGN5oswt17o6Xv705Q3v8v9ccHjwY4Ss2Vdrz9I97-AMnHwy2HltUJPwdMqHJsU1TVjolXIQJ9Mw65DVtHd4FwXDAb9yRnCWuMD">
+<!-- Refined Vignette & Tonal Gradient Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/35 pointer-events-none"></div>
+<!-- Left Column Header Overlay: Brand Identity -->
+<div class="absolute top-8 left-8 lg:top-12 lg:left-12 z-10 flex flex-col space-y-1"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-[24px]">spa</span><span class="text-white font-semibold text-base tracking-wide">Aurelle</span></div></div>
+<!-- Left Column Bottom Caption: Editorial Poetry -->
+<div class="absolute bottom-8 left-8 right-8 lg:bottom-12 lg:left-12 lg:right-12 z-10"><div class="max-w-md"><p class="text-white/95 text-base md:text-lg font-medium leading-relaxed">Mindful spaces and thoughtful living for everyday well-being.</p><span class="block mt-1 font-body-sm text-body-sm text-white/70">Simple, sustainable spaces.</span></div></div>
+</section>
+<!-- Right Column: Tactile Editorial Auth Interface -->
+<section class="w-full lg:w-1/2 min-h-screen flex flex-col justify-between bg-canvas-light px-8 md:px-14 lg:px-20 py-8 lg:py-10 relative">
+<!-- Top Utility Bar -->
+<header class="flex items-center justify-between w-full text-on-surface-variant font-label-md text-label-md"><a class="inline-flex items-center gap-1.5 text-on-surface hover:text-primary transition-colors text-sm font-medium" href="#"><span class="material-symbols-outlined text-[18px]">arrow_back</span><span class="">Back</span></a><div class="flex items-center gap-5"><a class="inline-flex items-center gap-1 text-on-surface hover:text-primary transition-colors text-sm font-medium" href="#"><span class="material-symbols-outlined text-[18px]">help_outline</span><span class="">Help</span></a><span class="h-3 w-[1px] bg-border-limestone"></span><button type="button" class="inline-flex items-center gap-1 text-on-surface hover:text-primary transition-colors text-sm font-medium"><span class="uppercase">EN</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></header>
+<!-- Centered Authentication Form Section -->
+<div class="max-w-[420px] w-full mx-auto my-auto py-10 lg:py-12">
+<!-- Discreet Brand Sub-mark -->
+
+<!-- Typography Heading Hierarchy -->
+<h1 class="text-2xl font-semibold text-ink-primary tracking-normal mb-1.5">Welcome back</h1>
+<p class="text-sm text-on-surface-variant font-normal mb-6">Sign in to your account to continue.</p>
+<!-- Authentication Form -->
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<!-- Field 1: Email or Client ID -->
+<div>
+<label class="block text-sm text-on-surface font-medium mb-1.5" for="client-id">Email or Username</label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-outline pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</span>
+<input class="w-full bg-white border border-border-limestone text-on-surface pl-10 pr-4 py-2.5 text-sm rounded-lg placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all shadow-none" id="client-id" name="client-id" placeholder="you@example.com" required="" type="email">
+</div>
+</div>
+<!-- Field 2: Password with Reveal Action -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="block text-sm text-on-surface font-medium mb-1.5" for="password">Password</label>
+</div>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-outline pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</span>
+<input class="w-full bg-white border border-border-limestone text-on-surface pl-10 pr-11 py-2.5 text-sm rounded-lg placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all shadow-none" id="password" name="password" placeholder="Enter your password" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-3.5 text-outline hover:text-ink-primary transition-colors duration-150 flex items-center justify-center" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[19px]" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Options Row: Custom Checkbox & Recovery -->
+<div class="flex items-center justify-between pt-1 pb-1">
+<label class="flex items-center gap-2.5 cursor-pointer group">
+<input class="w-4 h-4 rounded border border-border-limestone text-primary-container focus:ring-0 focus:ring-offset-0 bg-white cursor-pointer transition-colors" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-ink-primary transition-colors">
+                Remember me
+              </span>
+</label>
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4 decoration-border-limestone hover:decoration-secondary" href="#">
+              Forgot password?
+            </a>
+</div>
+<!-- Primary Sign In Action -->
+<button class="w-full bg-primary-container text-white py-2.5 px-5 rounded-lg text-sm font-semibold hover:bg-forest-deep transition-all duration-150 text-center block mt-1 border border-primary-container shadow-none active:scale-[0.99] cursor-pointer" type="submit">Sign in</button>
+<!-- Divider -->
+<div class="relative flex items-center justify-center py-3">
+<div class="w-full border-t border-border-limestone"></div>
+<span class="bg-canvas-light px-4 font-label-sm text-label-sm uppercase tracking-widest text-outline">
+              or continue with
+            </span>
+</div>
+<!-- Secondary Google Action -->
+<button class="w-full bg-white hover:bg-surface-cream border border-border-limestone text-ink-primary py-2.5 px-4 rounded-lg text-sm font-medium flex items-center justify-center gap-2.5 transition-colors duration-150 shadow-none cursor-pointer" type="button"><svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24"><path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.15z" fill="#4285F4"></path><path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.27 21.36 7.35 24 12 24z" fill="#34A853"></path><path d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.17 0 9.97 0 12s.46 3.83 1.26 5.42l4.02-3.15z" fill="#FBBC05"></path><path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.94 1.19 15.24 0 12 0 7.35 0 3.27 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z" fill="#EA4335"></path></svg><span class="">Continue with Google</span></button>
+<!-- Onboarding / Registration Prompt -->
+<div class="pt-4 text-center"><p class="text-sm text-on-surface-variant">Don't have an account? <a class="font-medium text-primary-container hover:text-primary underline underline-offset-4 ml-1 transition-colors" href="#">Sign up</a></p></div>
+</form>
+</div>
+<!-- Right Column Footer -->
+<footer class="pt-6 border-t border-border-limestone flex flex-col sm:flex-row items-center justify-between gap-3 text-on-surface-variant font-label-sm text-label-sm"><span class="text-xs text-on-surface-variant">© 2024 Aurelle Inc. All rights reserved.</span><div class="flex items-center gap-4 text-xs"><a class="hover:text-primary transition-colors" href="#">Privacy</a><span class="w-1 h-1 rounded-full bg-border-limestone"></span><a class="hover:text-primary transition-colors" href="#">Terms</a><span class="w-1 h-1 rounded-full bg-border-limestone"></span><a class="hover:text-primary transition-colors" href="#">Support</a></div></footer>
+</section>
+</main>
+<!-- Interactive Logic for Password Toggle & UX Touches -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const togglePasswordBtn = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eye-icon');
+
+      if (togglePasswordBtn && passwordInput && eyeIcon) {
+        togglePasswordBtn.addEventListener('click', () => {
+          const isPassword = passwordInput.getAttribute('type') === 'password';
+          passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+          eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+      }
+    });
+  </script>
+
+
+</body></html>
