@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Login.css'
+import { registerUser, validateUser } from '../../services/auth.js'
 
 const modes = {
   signin: {
@@ -46,7 +47,26 @@ function Login({ onLoginSuccess }) {
   function handleSubmit(event) {
     event.preventDefault()
     if (mode === 'signin') {
-      onLoginSuccess?.()
+      const formData = new FormData(event.currentTarget)
+      const isValidUser = validateUser(formData.get('username'), formData.get('password'))
+      if (isValidUser) onLoginSuccess?.()
+      else setNotice('We could not verify those credentials. Create an account or try again.')
+      return
+    }
+
+    if (mode === 'signup') {
+      const formData = new FormData(event.currentTarget)
+      try {
+        registerUser({
+          name: formData.get('name'),
+          username: formData.get('username'),
+          password: formData.get('password'),
+        })
+        setNotice('Account created. You can now sign in with your new credentials.')
+        setMode('signin')
+      } catch (error) {
+        setNotice(error.message)
+      }
       return
     }
 
