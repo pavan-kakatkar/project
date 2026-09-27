@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './Dashboard.css'
-import IceCream, { allProducts } from './IceCream.jsx'
-import Icon from './Icon.jsx'
+import IceCream, { allProducts } from '../icecream/index.jsx'
+import Icon from '../Icon.jsx'
+import { formatPrice } from '../../services/formatPrice.js'
 const modules = [
   { name: 'Ice Cream', icon: '✳' },
   { name: 'Events', icon: '♡', soon: true },
@@ -106,10 +107,10 @@ function Dashboard({ onLogout }) {
           {cartItems.length ? <>
             <div className="cart-items">{cartItems.map((product) => <div className="cart-item" key={product.id}>
               <img src={product.image} alt="" />
-              <div className="cart-item-info"><strong>{product.name}</strong><small>{product.note}</small><b>${(product.price * cart[product.id]).toFixed(2)}</b></div>
+              <div className="cart-item-info"><strong>{product.name}</strong><small>{product.note}</small><b>{formatPrice(product.price * cart[product.id])}</b></div>
               <div className="quantity-control"><button type="button" onClick={() => updateCart(product.id, -1)} aria-label={`Remove one ${product.name}`}><Icon name="minus" size={14} /></button><span>{cart[product.id]}</span><button type="button" onClick={() => updateCart(product.id, 1)} aria-label={`Add one ${product.name}`}><Icon name="plus" size={14} /></button></div>
             </div>)}</div>
-            <div className="cart-summary"><p><span>Subtotal</span><strong>${cartTotal.toFixed(2)}</strong></p><small>Taxes and pickup options calculated at checkout.</small><button type="button" onClick={() => { setToast('Your scoops are being saved for checkout.'); setCartOpen(false); window.setTimeout(() => setToast(''), 2600) }}>Continue to checkout <Icon name="arrow" size={17} /></button></div>
+            <div className="cart-summary"><p><span>Subtotal</span><strong>{formatPrice(cartTotal)}</strong></p><small>Taxes and pickup options calculated at checkout.</small><button type="button" onClick={() => { setToast('Your scoops are being saved for checkout.'); setCartOpen(false); window.setTimeout(() => setToast(''), 2600) }}>Continue to checkout <Icon name="arrow" size={17} /></button></div>
           </> : <div className="empty-cart"><span>♡</span><h3>Your bag is still dreaming.</h3><p>Add a scoop or two and make its day.</p><button type="button" onClick={() => setCartOpen(false)}>Explore flavours</button></div>}
         </aside>
       </>}
